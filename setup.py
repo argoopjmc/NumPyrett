@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
   name = 'NumPyrett',        
   packages = ['NumPyrett'],   
-  version = '0.5',     
+  version = '0.6',     
   license='MIT',        
   description = 'Prettyprint NumPy polynomials, matrices and arrays using LaTeX',
   long_description=long_description,
@@ -15,7 +15,7 @@ setup(
   author = 'Rahul Gupta',                  
   author_email = 'rahul.gupta@gmconsultants.com',    
   url = 'https://github.com/argoopjmc/NumPyrett',  
-  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_05.tar.gz',
+  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_06.tar.gz',
   keywords = ['NumPy', 'Education', 'Latex'],
   install_requires=[            
           'numpy'

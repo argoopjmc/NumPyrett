@@ -1,4 +1,4 @@
-__version__ = '0.1'
+__version__ = '0.8'
 __all__ = ['formatPoly', 'latex_matrix', '__version__']
 
 __author__ = u'Rahul Gupta'

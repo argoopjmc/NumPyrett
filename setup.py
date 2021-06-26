@@ -1,21 +1,16 @@
 from distutils.core import setup
-from os import path
-this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
 
 setup(
   name = 'NumPyrett',        
   packages = ['NumPyrett'],   
-  version = '0.6',     
+  version = '0.8',     
   license='MIT',        
   description = 'Prettyprint NumPy polynomials, matrices and arrays using LaTeX',
-  long_description=long_description,
-  long_description_content_type='text/markdown' ,
+  long_description='Prettyprint NumPy polynomials, matrices and arrays using LaTeX',
   author = 'Rahul Gupta',                  
   author_email = 'rahul.gupta@gmconsultants.com',    
   url = 'https://github.com/argoopjmc/NumPyrett',  
-  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_06.tar.gz',
+  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_08.tar.gz',
   keywords = ['NumPy', 'Education', 'Latex'],
   install_requires=[            
           'numpy'

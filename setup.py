@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'NumPyrett',        
   packages = ['NumPyrett'],   
-  version = '0.1',     
+  version = '0.2',     
   license='MIT',        
   description = 'Prettyprint NumPy polynomials, matrices and arrays using LaTeX',  
   author = 'Rahul Gupta',                  
   author_email = 'rahul.gupta@gmconsultants.com',    
   url = 'https://github.com/argoopjmc/NumPyrett',  
-  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_01.tar.gz',
+  download_url = 'https://github.com/argoopjmc/NumPyrett/archive/refs/tags/v_02.tar.gz',
   keywords = ['NumPy', 'Education', 'Latex'],
   install_requires=[            
           'numpy'

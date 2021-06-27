@@ -1,4 +1,4 @@
-__version__ = '0.8'
+__version__ = '1.0'
 __all__ = ['formatPoly', 'latex_matrix', '__version__']
 
 __author__ = u'Rahul Gupta'
@@ -7,9 +7,14 @@ __copyright__ = 'Copyright 2021 Rahul Gupta'
 
 
 # Source for numpyrett
+# Some code is inspired from StackExchange , namely
+# https://stackoverflow.com/questions/3862310/
+# https://stackoverflow.com/questions/17129290/
+# https://stackoverflow.com/questions/1911281/
 
 import numpy as np
 import fractions 
+from IPython.display import display, Markdown , Latex
 
 def frac_formatter(coeff , format_mode = False , format_string = '{:0.2f}' , poly_mode = True)->str:
   vals =  str(fractions.Fraction(coeff).limit_denominator()).split('/')
@@ -63,7 +68,7 @@ def formatPoly(poly , format_mode = False , format_string = '{:0.2f}' ,var_chang
                     pstr += prefix + frac_formatter(coeff[deg] , format_mode , format_string)
         deg = deg - 1
   # pstr+='$'
-  return pstr
+  display(Latex(pstr))
 
 def latex_matrix(array , mat_type = 'bmatrix' , format_mode = False , format_string = '{:0.2f}' ):
     if isinstance(array,np.matrix):
@@ -86,4 +91,42 @@ def latex_matrix(array , mat_type = 'bmatrix' , format_mode = False , format_str
     rv += ['  ' + ' & '.join(l.split()) + r'\\' for l in lines]
     rv +=  [r'\end{' + mat_type + '}']
     
-    return '\n'.join(rv)
+    display(Latex('\n'.join(rv)))
+
+def pretty_list(lst,index_colour_pair_dict= {0:'red'}):
+  array_str = ""
+  for i in range(len(lst)):
+    if i in index_colour_pair_dict.keys():
+      array_str+=fr"\fcolorbox{{{index_colour_pair_dict.get(i)}}}{{{index_colour_pair_dict.get(i)}}}{{{lst[i]}}}"
+    else:
+      array_str+=fr"\fbox{{{lst[i]}}}"
+  display(Latex (array_str))
+
+def get_all_subclasses(obj):
+    all_subclasses = []
+    for subclass in obj.__subclasses__():
+        all_subclasses.append(subclass.__name__)
+        all_subclasses.extend(get_all_subclasses(subclass))
+    return set(all_subclasses)
+
+def get_all_superclasses(obj):
+    all_superclasses = []
+    for superclass in obj.__bases__:
+        all_superclasses.append(superclass.__name__)
+        all_superclasses.extend(get_all_superclasses(superclass))
+    
+    return set(all_superclasses)
+
+def get_all_fields(obj):
+    return set(obj.__dict__.keys())
+
+def get_all_methods(obj):
+  return set([func for func in dir(obj.__class__) if callable(getattr(obj.__class__, func)) and not func.startswith("__")])
+
+def class_info(obj):
+  display(Markdown(fr'# Class {obj.__class__.__name__}'))
+  display(Markdown(fr'## Super Classes : { get_all_superclasses(obj.__class__) }'))
+  display(Markdown(fr'## Sub Classes   : { get_all_subclasses(obj.__class__) }'))
+  display(Markdown(fr'## Fields        : { get_all_fields(obj) }'))
+  display(Markdown(fr'## Methods       : { get_all_methods(obj) }'))
+ 

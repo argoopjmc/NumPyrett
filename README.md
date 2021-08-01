@@ -1,4 +1,7 @@
 # NumPyrett
+
+![image](https://user-images.githubusercontent.com/46709364/127758087-2d585f31-2262-4bc3-b0e5-b2d3c185864f.png)
+
 Prettyprint NumPy polynomials , matrices and arrays  
 
 Pyrett is a anagram for pretty , and sounds cool ( like a pirate) ...  

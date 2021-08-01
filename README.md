@@ -1,6 +1,6 @@
 # NumPyrett
 
-https://img.shields.io/pypi/dm/NumPyrett?style=plastic
+![NumPyrett Monthly Downloads](https://img.shields.io/pypi/dm/NumPyrett?style=plastic)
 
 Prettyprint NumPy polynomials , matrices and arrays  
 
